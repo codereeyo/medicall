@@ -11,7 +11,7 @@
 
 .banner-bg{
     position: relative;
-    background-image: url('/images/banner.webp');
+    background-image: url('../images/banner.webp');
     background-position: center 30%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -33,7 +33,7 @@
 
 .newsletter-bg{
     @extend .banner-bg;
-    background-image: url('/images/newsletter.webp');
+    background-image: url('../images/newsletter.webp');
     background-position: center 35%;
     &::before{
         background: rgba($color: #301b38, $alpha: 0.8); 
