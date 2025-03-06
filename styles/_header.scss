@@ -1,0 +1,173 @@
+@import './functions';
+
+header{
+    padding: 20px 20px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(255, 223, 239);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    .nav-bar-top{
+        @include flexBetween();
+        @include autoMargin();
+        padding: 20px 0;
+        border-bottom: 1px solid #EABDE6;
+        .logo{
+            font-size: 26px;
+        }
+        .logo span{
+            color: #AA60C8;
+        }
+        .details{
+            @include flexBetween();
+            gap: 30px;
+            .details-container{
+                @include flexBetween();
+                gap: 15px;
+                border-right: 1px solid #EABDE6;
+                padding-right: 30px;
+                i{
+                    color: #AA60C8;
+                    font-size: 18px;
+                }
+                .details-text{
+                    span{
+                        color: red;
+                        font-weight: 600;
+                    }
+                }
+            }
+            
+        }
+        #menu{
+            display: none;
+            i{
+                font-size: 32px;
+                color: $primaryColor;
+            }
+        }
+    }
+
+    .nav-bar-bottom{
+        @include autoMargin();
+        @include flexBetween();
+        padding: 20px 0;
+        .nav-bar-buttons{
+            display: flex;
+            gap: 15px;
+            &:focus{
+                outline: none;
+            }
+            .search-input{
+                padding: 15px 10px;
+                border-radius: 5px;
+                border: 1px solid $primaryColor;
+                background-color: transparent;
+                &::placeholder{
+                    color: $textColor;
+                }
+                &:focus{
+                    outline: 1px solid $primaryColor;
+                }
+            }
+            .appointment-btn{
+                @include primaryButton();
+                
+            }
+        }
+
+        .nav-links{
+            display: flex;
+            gap: 30px;
+            font-weight: 600;
+            .active{
+                color: #AA60C8;
+            }
+            a{
+                &:hover{
+                    color: #AA60C8;
+                }
+            }
+        }
+    }
+}
+
+/* Hide nav links by default on mobile */
+header .nav-bar-bottom .nav-links-responsive {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px; /* Adjust based on header height */
+    left: 0;
+    width: 100%;
+    background: rgba(255, 223, 239, 0.95);
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    gap: 30px;
+    font-weight: 600;
+    hr{
+        border: 1px solid $primaryColor;
+    }
+    .active{
+        color: #AA60C8;
+    }
+    .social-links{
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        i{
+            font-size: 14px;
+            color: white;
+            background-color: $primaryColor;
+            padding: 10px;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            @include flexCenter();
+        }
+    }
+}
+
+/* Show menu when 'menu-active' is added */
+header .nav-bar-bottom .nav-links-responsive.menu-active {
+    display: flex;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Style for better mobile UI */
+header .nav-bar-bottom .nav-links-responsive a {
+    padding: 10px;
+    text-align: center;
+    display: block;
+}
+
+
+@include mobile(){
+    header .nav-bar-top .details {
+        gap: 15px;
+        display: none;
+    }
+    header .nav-bar-top .details .details-container {
+        padding-right: 10px;
+    }
+    header .nav-bar-bottom .nav-links {
+        display: none;
+    }
+    #menu{
+        display: block!important;
+        margin: 0 15px;
+    }
+    header .nav-bar-bottom{
+        justify-content: center;
+    }
+    header .nav-bar-bottom .nav-bar-buttons .search-input{
+        padding: 15px 5px;
+    }
+    header .nav-bar-bottom .nav-bar-buttons .appointment-btn{
+        padding: 15px 25px;
+    }
+}
