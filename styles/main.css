@@ -214,10 +214,17 @@ header .nav-bar-bottom .nav-links-responsive a {
     justify-content: center;
   }
   header .nav-bar-bottom .nav-bar-buttons .search-input {
-    padding: 15px 5px;
+    padding: 15px 10px;
+    width: 150px;
   }
   header .nav-bar-bottom .nav-bar-buttons .appointment-btn {
     padding: 15px 25px;
+  }
+}
+@media (max-width: 350px) {
+  header .nav-bar-bottom .nav-bar-buttons .search-input {
+    padding: 15px 10px;
+    width: 120px;
   }
 }
 .hero-background {
@@ -230,7 +237,7 @@ header .nav-bar-bottom .nav-links-responsive a {
 
 .banner-bg, .newsletter-bg {
   position: relative;
-  background-image: url("/images/banner.webp");
+  background-image: url("../images/banner.webp");
   background-position: center 30%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -251,7 +258,7 @@ header .nav-bar-bottom .nav-links-responsive a {
 }
 
 .newsletter-bg {
-  background-image: url("/images/newsletter.webp");
+  background-image: url("../images/newsletter.webp");
   background-position: center 35%;
 }
 .newsletter-bg::before {
