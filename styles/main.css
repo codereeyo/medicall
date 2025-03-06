@@ -1048,6 +1048,9 @@ header .nav-bar-bottom .nav-links-responsive a {
   .appointment .appointment-form {
     width: 100%;
   }
+  .appointment .appointment-form .form-group button {
+    margin-bottom: 25px;
+  }
   .appointment .appointment-image {
     width: 100%;
   }
@@ -1075,6 +1078,14 @@ header .nav-bar-bottom .nav-links-responsive a {
   }
   .sub-footer {
     padding: 20px 0;
+    display: flex;
+    gap: 15px;
+  }
+  .sub-footer .left-content {
+    width: 50%;
+  }
+  .sub-footer .right-content {
+    width: 50%;
   }
   .scroll-top-btn {
     right: 20px !important;

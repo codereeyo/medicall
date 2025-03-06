@@ -709,6 +709,11 @@
         flex-direction: column-reverse;
         .appointment-form{
             width: 100%;
+            .form-group{
+                button{
+                    margin-bottom: 25px;
+                }
+            }
         }
         .appointment-image{
             width: 100%;
@@ -740,6 +745,14 @@
     }
     .sub-footer{
         padding: 20px 0;
+        display: flex;
+        gap: 15px;
+        .left-content{
+            width: 50%;
+        }
+        .right-content{
+            width: 50%;
+        }
     }
     .scroll-top-btn{
         right: 20px!important;
